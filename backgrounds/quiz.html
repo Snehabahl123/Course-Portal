@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>        
+    <div class="grid">
+        <div id="quiz">
+            <h1 style="text-align:center;background:blue;color:white">Quiz time!</h1>
+            <h3 id="progress" style="text-align:left;color:blue">Question x</h3>
+            <div style="border:solid blue ;text-align:center;border-right-width:50px;border-left-width:50px;border-top-width:50px;border-bottom-width:50px">
+            <p style="text-align:left;font-size:30px; margin-left:2%;" id="question"></p>
+
+            <div class="buttons" style="text-align:left;"  >
+
+                <div><button style="font-size:20px; margin-left:4%;" id="btn0"  ><span id="choice0" ></span></button></div></br>
+                <div><button style="font-size:20px; margin-left:4%;" id="btn1"  ><span id="choice1" ></span></button></div></br>
+                <div><button style="font-size:20px; margin-left:4%;" id="btn2"  ><span id="choice2"></span></button></div></br>
+                <div><button style="font-size:20px; margin-left:4%;" id="btn3"  ><span id="choice3"></span></button></div></br>
+            </div>
+            </div> 
+        </div>
+    </div>
+<script>
+function Quiz(questions) {
+    this.score = 0;
+    this.questions = questions;
+    this.questionIndex = 0;
+}
+Quiz.prototype.getQuestionIndex = function() {
+    return this.questions[this.questionIndex];
+}
+Quiz.prototype.guess = function(answer) {
+    if(this.getQuestionIndex().isCorrectAnswer(answer)) {
+        this.score++;
+    }
+    this.questionIndex++;
+}
+Quiz.prototype.isEnded = function() {
+    return this.questionIndex === this.questions.length;
+}
+</script>
+<script>
+function Question(text, choices, answer) {
+    this.text = text;
+    this.choices = choices;
+    this.answer = answer;
+}
+Question.prototype.isCorrectAnswer = function(choice) {
+    return this.answer === choice;
+}
+</script>
+<script src="ques.js"></script>
+</body>
+</html>

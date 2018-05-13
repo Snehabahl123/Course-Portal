@@ -1,0 +1,33 @@
+header { 
+border-bottom-style: solid;
+color:black;
+background-image: url("backgrounds/b1.png");
+}
+
+body{
+font-weight:bold;
+font-size:18px;
+background-image: url('backgrounds/b1.jpg');
+}
+
+#b1 {
+cursor: pointer;
+border-radius: 12px;
+background-color: #FFFFFF;
+color: blue;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+font-weight:bold;
+margin-left:3%;
+}
+
+.c{
+color:white;
+}
+
+
+
+
